@@ -9,7 +9,7 @@ const port = process.env.PORT || 3700;
 // ////////////// */ Constantes para la conexion con la base de datos //////////////
 const uri = 'mongodb+srv://user-opcua:Camilo1234@conectopcua.h7wtq.mongodb.net/mydatabase?retryWrites=true&w=majority';
 
-// conxion con opcUA - por orden este debe ir primero
+// conxion con OPC-UA
 // opc.f();
 
 mongoose.connect(uri)
