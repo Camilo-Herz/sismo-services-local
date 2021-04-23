@@ -1,7 +1,6 @@
 'use strict'
 
 var modelOPC = require('../models/modelDataOPC');
-const webSocket = require('../controllers/socket')
 
 var controller = {
 
@@ -18,7 +17,6 @@ var controller = {
             if (err) console.log('error al guardar el documento', err);
             if (!data) console.log('no se a podido guardar');
             console.log('Datos opc-ua enviados a mongo: ', req);
-            webSocket.emitSocket(req, id)
         });
     }
 }

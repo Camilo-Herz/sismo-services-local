@@ -7,9 +7,6 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 
-// Cargar archivos de ruta
-var routes = require('./routers/routerProcess');
-
 // Metodo que se ejecuta antes de la accion de un controlador (middleware)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // cualquier tipo de dato que llegue lo convierte a json
@@ -23,10 +20,6 @@ app.use((req, res, next) => {
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
-
-
-// Rutas
-app.use('/api', routes);
 
 // Export
 module.exports = server;
