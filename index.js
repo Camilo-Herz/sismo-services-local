@@ -6,11 +6,24 @@ const opc = require('./opcUA')
 const webSocket = require('./controllers/socket');
 const port = process.env.PORT || 3700;
 
+
+
 // ////////////// */ Constantes para la conexion con la base de datos //////////////
 const uri = 'mongodb+srv://user-opcua:Camilo1234@conectopcua.h7wtq.mongodb.net/mydatabase?retryWrites=true&w=majority';
 
 // conxion con OPC-UA
 // opc.f();
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const { HelloMessage } = require('node-opcua-transport');
+const { promoteOpaqueStructure } = require('node-opcua-client-dynamic-extension-object');
+const Http = new XMLHttpRequest();
+const url='https://sismo-service.herokuapp.com/api/localService';
+Http.open("POST", url);
+Http.send();
+
+Http.onreadystatechange = (e) => {
+  console.log(Http.responseText)
+}
 
 mongoose.connect(uri)
     .then(() => {
@@ -22,3 +35,8 @@ mongoose.connect(uri)
         })
 
     }).catch((err) => { console.log('Error: ', err); });
+
+
+function popo(popo){
+ console.log(popo);     
+}

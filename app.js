@@ -7,6 +7,8 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 
+//llama el front
+app.use(express.static('ui'));
 // Metodo que se ejecuta antes de la accion de un controlador (middleware)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // cualquier tipo de dato que llegue lo convierte a json
