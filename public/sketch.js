@@ -2,6 +2,9 @@
 // https://github.com/shiffman/itp-networked-media
 // Daniel Shiffman
 
+const opc = require('./opcUA');
+
+
 // Keep track of our socket connection
 var socket;
 
@@ -44,14 +47,17 @@ function mouseDragged() {
 // Function for sending to the socket
 function sendmouse(xpos, ypos) {
   // We are sending!
-  console.log("sendmouse: " + xpos + " " + ypos);
+ // console.log("sendmouse: " + xpos + " " + ypos);
   
   // Make a little object with  and y
   var data = {
-    x: xpos,
-    y: ypos
+    userId: "606f1023bfb4bf0c62d543a2",
+    idProject: "780",
+    topic: "Temperatura",
+    dataTopic: Math.random() * (1000 - 10) + 10,
+    date: new Date(2020, 4, 2, 15)
   };
-
+console.log(data);
   // Send that object to the socket
   socket.emit('event',data);
 }
