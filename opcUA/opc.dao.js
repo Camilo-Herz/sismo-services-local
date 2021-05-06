@@ -1,7 +1,7 @@
 
 const { AttributeIds, OPCUAClient, TimestampsToReturn } = require('node-opcua');
 
-const projectControllerOPC = require('./controllers/controllerDataOPC')
+const projectControllerOPC = require('./opc.controller')
 
 /////// */ constantesOPC-UA //////////
 const endpointUrl = "opc.tcp://localhost:4840";

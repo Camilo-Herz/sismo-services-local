@@ -1,9 +1,9 @@
 // 'use strict'
 
 const mongoose = require('mongoose');
-const app = require('./app');
-const opc = require('./opcUA')
-const webSocket = require('./controllers/socket');
+const app = require('./config/app');
+const opc = require('./opcUA/opc.dao')
+const webSocket = require('./config/socket');
 const port = process.env.PORT || 3800;
 
 // ////////////// */ Constantes para la conexion con la base de datos //////////////

@@ -1,7 +1,7 @@
 'use strict'
 
-var modelOPC = require('../models/modelDataOPC');
-const webSocket = require('../controllers/socket')
+var modelOPC = require('./opc.model');
+const webSocket = require('../config/socket')
 
 var controller = {
 

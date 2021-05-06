@@ -8,7 +8,7 @@ var app = express();
 var server = require('http').Server(app);
 
 // Cargar archivos de ruta
-var routes = require('./routers/routerProcess');
+var routes = require('../routers/app.routes');
 
 // Metodo que se ejecuta antes de la accion de un controlador (middleware)
 app.use(bodyParser.urlencoded({ extended: false }));
