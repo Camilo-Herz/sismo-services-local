@@ -4,8 +4,9 @@ const { AttributeIds, OPCUAClient, TimestampsToReturn } = require('node-opcua');
 const projectControllerOPC = require('./opc.controller')
 
 /////// */ constantesOPC-UA //////////
-const endpointUrl = "opc.tcp://localhost:4840";
-const pathNodeId = "ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.";
+const endpointUrl = "opc.tcp://192.168.50.100:4840";
+const pathNodeId = "ns=4;s=|var|CODESYS Control for Raspberry Pi SL.Application.PLC_PRG.";
+
 /////////////////////////////////////
 
 const conectOPC = {
@@ -42,7 +43,7 @@ const conectOPC = {
                 queueSize: 100 //tamaño de la cola antes de empezar a descartar
             };
 
-            var ids = ["Camilo", "Kevin", "Andres", "Sofia", "Paola"];
+            var ids = ["Rxdata1", "Rxdata2", "Rxdata3", "Rxdata4", "Rxdata5"];
             ids.forEach(async (id) => {
                 // monitoreo de las variables de OPC
                 const itemToMonitor = {

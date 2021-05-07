@@ -22,3 +22,7 @@ mongoose.connect(uri)
         })
 
     }).catch((err) => { console.log('Error: ', err); });
+
+function init(){
+    console.log('aquitoy')
+}
