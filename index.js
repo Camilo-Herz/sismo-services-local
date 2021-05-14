@@ -10,7 +10,8 @@ const port = process.env.PORT || 3800;
 const uri = 'mongodb+srv://user-opcua:Camilo1234@conectopcua.h7wtq.mongodb.net/mydatabase?retryWrites=true&w=majority';
 
 // conxion con opcUA - por orden este debe ir primero
-// opc.f();
+opc.f();
+
 
 mongoose.connect(uri)
     .then(() => {
@@ -22,7 +23,3 @@ mongoose.connect(uri)
         })
 
     }).catch((err) => { console.log('Error: ', err); });
-
-function init(){
-    console.log('aquitoy')
-}

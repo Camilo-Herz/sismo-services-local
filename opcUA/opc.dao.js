@@ -1,10 +1,12 @@
 
 const { AttributeIds, OPCUAClient, TimestampsToReturn } = require('node-opcua');
 
-const projectControllerOPC = require('./opc.controller')
+const projectControllerOPC = require('./opc.controller');
+const params = require('../filters');
 
 /////// */ constantesOPC-UA //////////
-const endpointUrl = "opc.tcp://192.168.50.100:4840";
+const endpointUrl = params.endpoint();
+const ids = params.topics();
 const pathNodeId = "ns=4;s=|var|CODESYS Control for Raspberry Pi SL.Application.PLC_PRG.";
 
 /////////////////////////////////////
@@ -42,8 +44,7 @@ const conectOPC = {
                 discardOldest: true, //indicador para descartar datos historicos
                 queueSize: 100 //tamaño de la cola antes de empezar a descartar
             };
-
-            var ids = ["Rxdata1", "Rxdata2", "Rxdata3", "Rxdata4", "Rxdata5"];
+            
             ids.forEach(async (id) => {
                 // monitoreo de las variables de OPC
                 const itemToMonitor = {

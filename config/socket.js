@@ -20,7 +20,7 @@ const webSocket = {
         socket.emit("event", {
             userId: "606f1023bfb4bf0c62d543a2",
             idProject: "780",
-            topic: "POPO",
+            topic: "Rxdata1",
             dataTopic: req,
             date: new Date()
         });   
