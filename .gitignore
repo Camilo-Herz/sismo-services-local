@@ -16,3 +16,7 @@ debug.log
 
 # IDE - VSCode
 .vscode
+
+# archivos generados
+response.json
+dataUser.json

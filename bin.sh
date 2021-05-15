@@ -104,7 +104,7 @@ if [[ "$response" == *"status\":1"* ]]; then
   echo -e "\e[1;35m                     `date +"%d/%m/%Y  %H:%M"      `\e[0m"
   sleep 1
   echo $response > response.json
-  echo $response > response1.json
+  echo $response > dataUser.json
   echo -e "\e[1;32m         ===========================================\e[0m"
   echo -e "\e[1;32m         =          Obteniendo Listado Pj.         =\e[0m"
   echo -e "\e[1;32m         ===========↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓=============\e[0m"

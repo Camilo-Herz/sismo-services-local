@@ -1,9 +1,11 @@
 const io = require("socket.io-client");
-const socket = io("https://sismo-service.herokuapp.com", {
+const clientId = require('../filters').clientId();
+//const socket = io("https://sismo-service.herokuapp.com", {
+const socket = io("http://localhost:3700", {
     reconnection: true,
     autoConnect: true,
     query: {
-        nameRoom: '0c62d543a2'
+        nameRoom: clientId
     },
     extraHeaders: {}
 });

@@ -1,5 +1,6 @@
-const data = require("./response1.json");
+const data = require("./dataUser.json");
 const dataFilter = require("./response.json");
+const jwt_decode = require('jwt-decode');
 
 const OPC = {
   endpoint: () => {
@@ -24,6 +25,11 @@ const OPC = {
     });
     return arrayTopics;
   },
+  clientId: () => {
+    const decoded = jwt_decode(data.accessToken);
+    const clientId = decoded.id.substr(-10);
+    return clientId;
+  }
 };
 
 module.exports = OPC;
