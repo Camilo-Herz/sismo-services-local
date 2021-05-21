@@ -13,6 +13,16 @@ const OPC = {
     });
     return endpoind;
   },
+  idProject: () => {
+    let idProject = "";
+    const dataProject = dataFilter.nombreProceso.replace(/_/g, " ").split("=>");
+    data.payload.projects.map((element) => {
+      if (element.nombreProceso === dataProject[0]) {
+        idProject = element.idProject;
+      }
+    });
+    return idProject;
+  },
   topics: () => {
     const arrayTopics = [];
     const dataProject = dataFilter.nombreProceso.replace(/_/g, " ").split("=>");
@@ -29,6 +39,10 @@ const OPC = {
     const decoded = jwt_decode(data.accessToken);
     const clientId = decoded.id.substr(-10);
     return clientId;
+  },  
+  clientIdFull: () => {
+    const decoded = jwt_decode(data.accessToken);
+    return decoded.id;
   }
 };
 

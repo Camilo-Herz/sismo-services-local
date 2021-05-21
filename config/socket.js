@@ -1,7 +1,8 @@
 const io = require("socket.io-client");
+const { clientIdFull } = require("../filters");
 const clientId = require('../filters').clientId();
-//const socket = io("https://sismo-service.herokuapp.com", {
-const socket = io("http://localhost:3700", {
+const socket = io("https://sismo-service.herokuapp.com", {
+//const socket = io("http://localhost:3700", {
     reconnection: true,
     autoConnect: true,
     query: {
@@ -15,7 +16,7 @@ const webSocket = {
     conectionSocket: () => {
         socket.on("event", (res) => {
             // datos recibidos
-            console.log('datos recibidos: ', res);
+           // console.log('datos recibidos: ', res);
         });
     },
     emitSocket: (req) => {

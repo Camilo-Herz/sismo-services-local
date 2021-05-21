@@ -4,14 +4,14 @@ var mongoose = require('mongoose');
 var schemaProject = mongoose.Schema;
 
 var opcSchema = schemaProject({
-    idSensor: Number,
-    dato: String,
-    proyecto: String
-},
-{
-    timestamps: true // guarda la fecha de creacion y de actualizacion
+    userId: String ,
+    idProject: String,
+    topic: String,
+    dataTopic:String,
+    date: String  
+
 }
 );
 
-module.exports = mongoose.model('datasets', opcSchema);
+module.exports = mongoose.model('dataset', opcSchema);
 // projects = nombre del esquema que tenemos en la base de datos

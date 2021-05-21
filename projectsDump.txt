@@ -1,2 +1,2 @@
- Prueba_graficas=>780
+ TLR=>110
 Proyectos
