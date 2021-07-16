@@ -23,7 +23,7 @@ const webSocket = {
     },
     emitSocket: (req,id) => {
         socket.emit("event", {
-            userId: "606f1023bfb4bf0c62d543a2",
+            userId: clientIdFull,
             idProject: idProject,
             topic: id,
             dataTopic: req,
